@@ -1,3 +1,4 @@
+require('dotenv').config();
 const express = require('express');
 var bodyParser = require('body-parser');
  
@@ -21,7 +22,7 @@ const corsOptions = {
 app.use(cors(corsOptions));
 
 app.use(bodyParser.json());
-app.use('/', router);
+app.use('/api/', router);
 app.get("/",(req,res) => {
   
   res.json({mesage:"Bienvenido Estudiantes de UMG"});

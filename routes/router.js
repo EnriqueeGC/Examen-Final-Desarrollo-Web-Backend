@@ -2,30 +2,12 @@
 let express = require('express');
 let router = express.Router();
 
-const cuenta = require('../controllers/cuenta.controller.js');
-// const tipoTransaccion = require('../controllers/tipoTransaccion.controller.js');
-// const controlDeTransacciones = require('../controllers/controlDeTransacciones.controller.js');
+const proyecto = require('../controllers/proyecto.controllers.js');
 
-//CUENTA
-router.post('/api/cuenta/create', cuenta.create);
-router.get('/api/cuenta/all', cuenta.retrieveAllCuentas);
-router.get('/api/cuenta/onebyid/:id', cuenta.getCuentaById);
-router.put('/api/cuenta/update/:id', cuenta.updateCuentaById);
-router.delete('/api/cuenta/delete/:id', cuenta.deleteCuentaById);
-
-
-// // TIPO TRANSACCION
-// router.post('/api/tipoTransaccion/create', tipoTransaccion.create);
-// router.get('/api/tipoTransaccion/all', tipoTransaccion.retrieveAllTipoTransaccion);
-// router.get('/api/tipoTransaccion/onebyid/:id', tipoTransaccion.getTipoTransaccionById);
-// router.put('/api/tipoTransaccion/update/:id', tipoTransaccion.updateTipoTransaccionById);
-// router.delete('/api/tipoTransaccion/delete/:id', tipoTransaccion.deleteTipoTransaccionById);
-
-// //CONTROL DE TRANSACCIONES
-// router.post('/api/controlDeTransacciones/create', controlDeTransacciones.createTransaction);
-// router.get('/api/controlDeTransacciones/all', controlDeTransacciones.retrieveAllTransactions);
-// router.get('/api/controlDeTransacciones/onebyid/:id', controlDeTransacciones.getTransactionById);
-// router.put('/api/controlDeTransacciones/update/:id', controlDeTransacciones.updateTransactionById);
-// router.delete('/api/controlDeTransacciones/delete/:id', controlDeTransacciones.deleteTransactionById);
+router.post('/to-do/create', proyecto.create);
+router.get('/to-do/all', proyecto.findAll);
+router.get('/to-do/onebyid/:id', proyecto.findById);
+router.put('/to-do/update/:id', proyecto.update);
+router.delete('/to-do/delete/:id', proyecto.delete);
 
 module.exports = router;
