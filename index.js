@@ -15,11 +15,8 @@ db.sequelize.sync({force: true}).then(() => {
 const app = express();
 
 const cors = require('cors')
-const corsOptions = {
-  origin: 'https://examen-final-desarrollo-web-backend.onrender.com', 
-  optionsSuccessStatus: 200
-}
-app.use(cors(corsOptions));
+
+app.use(cors());
 
 app.use(bodyParser.json());
 app.use('/api/', router);
@@ -28,8 +25,11 @@ app.get("/",(req,res) => {
   res.json({mesage:"Bienvenido Estudiantes de UMG"});
 })
 
+//configurar el puerto para render en la nube
+const PORT = process.env.PORT || 8081;
+
 // Create a Server
-const server = app.listen(8081, function () {
+const server = app.listen(PORT, function () {
  
   let host = server.address().address
   let port = server.address().port
