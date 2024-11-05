@@ -16,7 +16,7 @@ const app = express();
 
 const cors = require('cors')
 const corsOptions = {
-  origin: 'http://localhost:4200', 
+  origin: 'https://examen-final-desarrollo-web-backend.onrender.com', 
   optionsSuccessStatus: 200
 }
 app.use(cors(corsOptions));
